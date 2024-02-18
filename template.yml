@@ -1,0 +1,16 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Transform: AWS::Serverless-2016-10-31
+Description: "Notifications from GCP Pub/Sub"
+
+
+Resources:
+  NotificationQueue:
+    Type: AWS::SQS::Queue
+    Properties:
+      MessageRetentionPeriod: 172800
+      VisibilityTimeout: 1800
+
+Outputs:
+  NotificationQueueUrl:
+    Description: URL of the NewReviewQueue
+    Value: !GetAtt NotificationQueue.QueueUrl

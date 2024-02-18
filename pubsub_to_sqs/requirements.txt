@@ -1,0 +1,4 @@
+google-cloud-pubsub
+functions-framework
+boto3
+google-cloud-logging
